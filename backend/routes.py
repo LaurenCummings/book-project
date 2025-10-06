@@ -19,7 +19,7 @@ def create_book():
         author = data.get("author")
         plot = data.get("plot")
         genre = data.get("genre")
-        img_url = data.get("imgUrl")
+        img_url = data.get("img_url")
 
         new_book = Book(title=title, author=author, plot=plot, genre=genre, img_url=img_url)
 
