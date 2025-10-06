@@ -15,6 +15,11 @@ def create_book():
     try: 
         data = request.json
 
+        required_fields = ["title", "author", "plot", "genre"]
+        for field in required_fields:
+            if field not in data:
+                return jsonify({"error": f'Missing required field: {field}'}), 400
+
         title = data.get("title")
         author = data.get("author")
         plot = data.get("plot")
