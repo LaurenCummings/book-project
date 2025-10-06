@@ -7,3 +7,13 @@ class Book(db.Model):
     plot = db.Column(db.Text, nullable=False)
     genre = db.Column(db.String(50), nullable=False)
     img_url = db.Column(db.String(200), nullable=True)
+
+    def to_json(self):
+        return {
+            "id": self.id,
+            "title": self.title,
+            "author": self.author,
+            "plot": self.plot,
+            "genre": self.genre,
+            "imgUrl": self.img_url,
+        }
