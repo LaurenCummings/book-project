@@ -36,3 +36,17 @@ def create_book():
     except Exception as e:
         db.session.rollback()
         return jsonify({"error": str(e)}), 500
+    
+# Delete a book
+@app.route("/api/books/<int:id>", methods=["DELETE"])
+def delete_book(id):
+    try:
+        book = Book.query.get(id)
+        if book is None:
+            return jsonify({"error": "Book not found"}), 404
+        db.session.delete(book)
+        db.session.commit()
+        return jsonify({"msg": "Book deleted"}), 200
+    except Exception as e:
+        db.session.rollback()
+        return jsonify({"error": str(e)}), 500
