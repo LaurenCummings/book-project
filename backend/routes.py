@@ -6,3 +6,5 @@ from models import Book
 @app.route("/api/books", methods=["GET"])
 def get_books():
     books = Book.query.all()
+    result = [book.to_json() for book in books]
+    return jsonify(result)
