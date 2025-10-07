@@ -52,7 +52,7 @@ def delete_book(id):
         return jsonify({"error": str(e)}), 500
     
 # Update a book
-@app.route("/api/book/<int:id>", methods=["PATCH"])
+@app.route("/api/books/<int:id>", methods=["PATCH"])
 def update_book(id):
     try:
         book = Book.query.get(id)
