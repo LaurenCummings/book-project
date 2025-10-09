@@ -1,5 +1,5 @@
 
-const BookCard = () => {
+const BookCard = ({ book }) => {
   return (
     <div>BookCard</div>
   )

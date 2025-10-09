@@ -1,4 +1,6 @@
 import { Grid } from "@chakra-ui/react";
+import { BOOKS } from "../dummyData";
+import BookCard from "./BookCard";
 
 const UserGrid = () => {
   return (
@@ -9,7 +11,9 @@ const UserGrid = () => {
         lg: "repeat(3, 1fr)",
       }}
     >
-
+      {BOOKS.map((book) => (
+        <BookCard key={book.id} book={book} />
+      ))}
     </Grid>
   )
 }
