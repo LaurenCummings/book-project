@@ -1,4 +1,4 @@
-import { Button, Flex, FormControl, FormLabel, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, Select, Textarea, useDisclosure } from "@chakra-ui/react";
+import { Button, Flex, FormControl, FormLabel, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Select, Textarea, useDisclosure } from "@chakra-ui/react";
 import { BiAddToQueue } from "react-icons/bi";
 
 const CreateBookModal = () => {
@@ -51,6 +51,13 @@ const CreateBookModal = () => {
                         <Input placeholder="Type image URL here" />
                     </FormControl>
                 </ModalBody>
+
+                <ModalFooter>
+                    <Button colorScheme="blue" mr={3}>
+                        Add
+                    </Button>
+                    <Button onClick={onClose}>Cancel</Button>
+                </ModalFooter>
             </ModalContent>
 
         </Modal>
