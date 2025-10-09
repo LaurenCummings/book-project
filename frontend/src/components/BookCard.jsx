@@ -1,4 +1,4 @@
-import { Box, Card, CardHeader, Flex, Heading, IconButton, Image, Text } from "@chakra-ui/react";
+import { Box, Card, CardBody, CardHeader, Flex, Heading, IconButton, Image, Text } from "@chakra-ui/react";
 import { BiTrash } from "react-icons/bi";
 
 const BookCard = ({ book }) => {
@@ -26,6 +26,12 @@ const BookCard = ({ book }) => {
                 </Flex>
             </Flex>
         </CardHeader>
+
+        <CardBody>
+            <Text>
+                {book.plot}
+            </Text>
+        </CardBody>
     </Card>
   )
 }
