@@ -11,7 +11,7 @@ const Navbar = () => {
             <Flex h="16" alignItems={"center"} justifyContent={"space-between"}>
                 <Flex alignItems={"center"} justifyContent={"center"} gap={3} display={{base:"none", sm:"flex"}}>
                     <img src="/books_large.png" alt="books image" width={50} height={50} />
-                    <Text>My Books</Text>
+                    <Text fontSize={"30px"}>My Books</Text>
                 </Flex>
                 <Flex gap={3} alignItems={"center"}>
                     <Button onClick={toggleColorMode}>
