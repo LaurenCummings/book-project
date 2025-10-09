@@ -26,6 +26,7 @@ const BookCard = ({ book }) => {
                     />
                 </Flex>
             </Flex>
+            <Text fontStyle="italic">{book.genre}</Text>
         </CardHeader>
 
         <CardBody>
