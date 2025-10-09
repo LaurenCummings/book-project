@@ -1,7 +1,13 @@
+import { Button } from "@chakra-ui/react"
+import { BiAddToQueue } from "react-icons/bi"
 
 const CreateBookModal = () => {
   return (
-    <div>CreateBookModal</div>
+    <>
+        <Button>
+            <BiAddToQueue />
+        </Button>
+    </>
   )
 }
 
