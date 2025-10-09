@@ -37,13 +37,14 @@ const CreateBookModal = () => {
                     <FormControl mt={4} isRequired>
                         <FormLabel>Genre</FormLabel>
                         <Select placeholder="Select genre">
-                            <option value="option1">Mystery</option>
-                            <option value="option1">Non-Fiction</option>
-                            <option value="option1">Historical Fiction</option>
-                            <option value="option1">Fantasy</option>
-                            <option value="option1">Biography</option>
-                            <option value="option1">YA Fiction</option>
-                            <option value="option1">Thriller</option>
+                            <option value="mystery">Mystery</option>
+                            <option value="nonFiction">Non-Fiction</option>
+                            <option value="historicalFiction">Historical Fiction</option>
+                            <option value="fantasy">Fantasy</option>
+                            <option value="biography">Biography</option>
+                            <option value="yaFiction">YA Fiction</option>
+                            <option value="thriller">Thriller</option>
+                            <option value="dystopian">Dystopian</option>
                         </Select>
                     </FormControl>
                     <FormControl mt={4}>
