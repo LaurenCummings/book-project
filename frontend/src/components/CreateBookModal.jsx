@@ -21,20 +21,20 @@ const CreateBookModal = () => {
 
                 <ModalBody pb={6}>
                     <Flex alignItems={"center"} gap={4}>
-                        <FormControl>
+                        <FormControl isRequired>
                             <FormLabel>Title</FormLabel>
                             <Input placeholder="Type title here" />
                         </FormControl>
-                        <FormControl>
+                        <FormControl isRequired>
                             <FormLabel>Author</FormLabel>
                             <Input placeholder="Type author here" />
                         </FormControl>
                     </Flex>
-                    <FormControl>
+                    <FormControl isRequired>
                         <FormLabel>Plot</FormLabel>
                         <Textarea placeholder="Type plot here" />
                     </FormControl>
-                    <FormControl>
+                    <FormControl isRequired>
                         <FormLabel>Genre</FormLabel>
                         <Select placeholder="Select genre">
                             <option value="option1">Mystery</option>
