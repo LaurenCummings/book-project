@@ -1,4 +1,4 @@
-import { Box, Button, Container, Flex, useColorMode, useColorModeValue } from "@chakra-ui/react"
+import { Box, Button, Container, Flex, Text, useColorMode, useColorModeValue } from "@chakra-ui/react"
 import { IoMoon } from "react-icons/io5"
 import { LuSun } from "react-icons/lu"
 
@@ -11,6 +11,7 @@ const Navbar = () => {
             <Flex h="16" alignItems={"center"} justifyContent={"space-between"}>
                 <Flex alignItems={"center"} justifyContent={"center"} gap={3} display={{base:"none", sm:"flex"}}>
                     <img src="/books_large.png" alt="books image" width={50} height={50} />
+                    <Text>My Books</Text>
                 </Flex>
                 <Flex gap={3} alignItems={"center"}>
                     <Button onClick={toggleColorMode}>
