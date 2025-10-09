@@ -1,6 +1,6 @@
 import { Container, Stack } from "@chakra-ui/react";
 import Navbar from "./components/Navbar";
-import UserGrid from "./components/UserGrid";
+import BookGrid from "./components/BookGrid";
 
 function App() {
 
@@ -9,7 +9,7 @@ function App() {
       <Navbar />
       
       <Container maxW={"1200px"} my={4}>
-        <UserGrid />
+        <BookGrid />
 
       </Container>
     </Stack>
