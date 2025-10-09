@@ -1,5 +1,6 @@
 import { Box, Card, CardBody, CardHeader, Flex, Heading, IconButton, Image, Text } from "@chakra-ui/react";
 import { BiTrash } from "react-icons/bi";
+import EditModal from "./EditModal";
 
 const BookCard = ({ book }) => {
   return (
@@ -15,7 +16,7 @@ const BookCard = ({ book }) => {
                     </Box>
                 </Flex>
                 <Flex>
-                    {/* <EditModal book={book} /> */}
+                    <EditModal book={book} />
                     <IconButton 
                         variant="ghost"
                         colorScheme="red"

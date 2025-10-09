@@ -1,5 +1,5 @@
 
-const EditModal = () => {
+const EditModal = ({ book }) => {
   return (
     <div>EditModal</div>
   )
