@@ -1,4 +1,4 @@
-import { Button, Flex, FormControl, FormLabel, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, useDisclosure } from "@chakra-ui/react";
+import { Button, Flex, FormControl, FormLabel, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, useDisclosure } from "@chakra-ui/react";
 import { BiAddToQueue } from "react-icons/bi";
 
 const CreateBookModal = () => {
@@ -20,9 +20,10 @@ const CreateBookModal = () => {
                 <ModalCloseButton />
 
                 <ModalBody pb={6}>
-                    <Flex alignItemsd={"center"} gap={4}>
+                    <Flex alignItems={"center"} gap={4}>
                         <FormControl>
-                            <FormLabel></FormLabel>
+                            <FormLabel>Title</FormLabel>
+                            <Input placeholder="Type title here" />
                         </FormControl>
                     </Flex>
                 </ModalBody>
