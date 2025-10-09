@@ -10,6 +10,7 @@ const UserGrid = () => {
         md: "repeat(2, 1fr)",
         lg: "repeat(3, 1fr)",
       }}
+      gap={4}
     >
       {BOOKS.map((book) => (
         <BookCard key={book.id} book={book} />

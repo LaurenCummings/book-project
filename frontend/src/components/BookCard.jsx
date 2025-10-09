@@ -1,4 +1,5 @@
-import { Box, Card, CardHeader, Flex, Heading, Image, Text } from "@chakra-ui/react";
+import { Box, Card, CardHeader, Flex, Heading, IconButton, Image, Text } from "@chakra-ui/react";
+import { BiTrash } from "react-icons/bi";
 
 const BookCard = ({ book }) => {
   return (
@@ -6,14 +7,23 @@ const BookCard = ({ book }) => {
         <CardHeader>
             <Flex gap={4}>
                 <Flex flex={"1"} gap={"4"} alignItems={"center"}>
-                    <Image src="./books.png" />
+                    <Image src="./books_large.png" />
 
                     <Box>
                         <Heading size="sm">{book.title}</Heading>
                         <Text>{book.author}</Text>
                     </Box>
                 </Flex>
-                <Flex></Flex>
+                <Flex>
+                    {/* <EditModal book={book} /> */}
+                    <IconButton 
+                        variant="ghost"
+                        colorScheme="red"
+                        size={"sm"}
+                        aria-label="See menu"
+                        icon={<BiTrash size={20} />}
+                    />
+                </Flex>
             </Flex>
         </CardHeader>
     </Card>
