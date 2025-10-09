@@ -30,11 +30,11 @@ const CreateBookModal = () => {
                             <Input placeholder="Type author here" />
                         </FormControl>
                     </Flex>
-                    <FormControl isRequired>
+                    <FormControl mt={4} isRequired>
                         <FormLabel>Plot</FormLabel>
                         <Textarea placeholder="Type plot here" />
                     </FormControl>
-                    <FormControl isRequired>
+                    <FormControl mt={4} isRequired>
                         <FormLabel>Genre</FormLabel>
                         <Select placeholder="Select genre">
                             <option value="option1">Mystery</option>
@@ -46,7 +46,7 @@ const CreateBookModal = () => {
                             <option value="option1">Thriller</option>
                         </Select>
                     </FormControl>
-                    <FormControl>
+                    <FormControl mt={4}>
                         <FormLabel>Image URL</FormLabel>
                         <Input placeholder="Type image URL here" />
                     </FormControl>
