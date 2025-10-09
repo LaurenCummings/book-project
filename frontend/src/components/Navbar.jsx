@@ -1,6 +1,7 @@
 import { Box, Button, Container, Flex, Text, useColorMode, useColorModeValue } from "@chakra-ui/react"
 import { IoMoon } from "react-icons/io5"
 import { LuSun } from "react-icons/lu"
+import CreateBookModal from "./CreateBookModal"
 
 const Navbar = () => {
     const { colorMode, toggleColorMode } = useColorMode()
@@ -17,6 +18,7 @@ const Navbar = () => {
                     <Button onClick={toggleColorMode}>
                         {colorMode === "light" ? <IoMoon /> : <LuSun size={20} />}
                     </Button>
+                    <CreateBookModal />
                 </Flex>
             </Flex>
         </Box>
