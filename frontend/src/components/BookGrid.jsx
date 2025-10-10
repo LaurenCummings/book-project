@@ -1,10 +1,9 @@
 import { Grid } from "@chakra-ui/react";
 import { BOOKS } from "../dummyData";
 import BookCard from "./BookCard";
-import { useState } from "react";
+import { useEffect } from "react";
 
-const UserGrid = () => {
-  const [books, setBooks] = useState([]);
+const UserGrid = ({ books }) => {
 
   return (
     <Grid
