@@ -8,10 +8,10 @@ function App() {
 
   return (
     <Stack minH={"100vh"}>
-      <Navbar />
+      <Navbar setBooks={setBooks} />
       
       <Container maxW={"1200px"} my={4}>
-        <BookGrid />
+        <BookGrid books={books} />
 
       </Container>
     </Stack>
