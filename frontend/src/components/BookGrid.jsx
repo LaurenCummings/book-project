@@ -1,4 +1,4 @@
-import { Flex, Grid, Spinner } from "@chakra-ui/react";
+import { Flex, Grid, Spinner, Text } from "@chakra-ui/react";
 import BookCard from "./BookCard";
 import { useEffect, useState } from "react";
 
@@ -42,6 +42,16 @@ const UserGrid = ({ books, setBooks }) => {
       {isLoading && (
         <Flex justifyContent={"center"}>
           <Spinner size={"xl"} />
+        </Flex>
+      )}
+
+      {!isLoading && books.length === 0 && (
+        <Flex justifyContent={"center"}>
+          <Text fontSize={"xl"}>
+            <Text as={"span"} fontSize={"2xl"} fontWeight={"bold"} mr={2}>
+              No Books Found
+            </Text>
+          </Text>
         </Flex>
       )}
     </>
