@@ -1,8 +1,17 @@
 import { Button, Flex, FormControl, FormLabel, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Select, Textarea, useDisclosure } from "@chakra-ui/react";
 import { BiAddToQueue } from "react-icons/bi";
+import { useState } from "react";
 
 const CreateBookModal = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
+    const [isLoading, setIsLoading] = useState(false);
+    const [inputs, setInput] = useState({
+        title: "",
+        author: "",
+        plot: "",
+        genre: "",
+        imgUrl: "",
+    });
 
   return (
     <>
