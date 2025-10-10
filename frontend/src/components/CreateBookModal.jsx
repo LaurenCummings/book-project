@@ -18,6 +18,7 @@ const CreateBookModal = () => {
 
     const handleCreateBook = async (e) => {
         e.preventDefault();
+        setIsLoading(true);
         try {
             const res = await fetch(BASE_URL + "/books", {
                 method: "POST",
@@ -48,6 +49,15 @@ const CreateBookModal = () => {
                 description: error.message,
                 duration: 4000,
             });
+        } finally {
+            setIsLoading(false);
+            setInputs({
+                title: "",
+                author: "",
+                plot: "",
+                genre: "",
+                imgUrl: "",
+            })
         }
     };
 
