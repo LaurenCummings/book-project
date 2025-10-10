@@ -1,8 +1,11 @@
 import { Grid } from "@chakra-ui/react";
 import { BOOKS } from "../dummyData";
 import BookCard from "./BookCard";
+import { useState } from "react";
 
 const UserGrid = () => {
+  const [books, setBooks] = useState([]);
+
   return (
     <Grid
       templateColumns={{
