@@ -11,7 +11,7 @@ function App() {
       <Navbar setBooks={setBooks} />
       
       <Container maxW={"1200px"} my={4}>
-        <BookGrid books={books} />
+        <BookGrid books={books} setBooks={setBooks} />
 
       </Container>
     </Stack>

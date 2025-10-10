@@ -1,9 +1,26 @@
 import { Grid } from "@chakra-ui/react";
 import { BOOKS } from "../dummyData";
 import BookCard from "./BookCard";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
-const UserGrid = ({ books }) => {
+const UserGrid = ({ books, setBooks }) => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const getBooks = async () => {
+      try {
+        const res = await fetch("http://localhost:5000/api/books")
+        const data = await res.json();
+
+        if (!res.ok) {
+          throw new Error(data.error);
+        }
+        setBooks(data);
+      } catch (error) {
+
+      }
+    }
+  },[]);
 
   return (
     <Grid
