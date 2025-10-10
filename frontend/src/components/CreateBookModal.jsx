@@ -40,9 +40,14 @@ const CreateBookModal = () => {
                 position: "top-center",
             });
             onClose();
-            
-        } catch (error) {
 
+        } catch (error) {
+            toast({
+                status: "error",
+                title: "An error occurred",
+                description: error.message,
+                duration: 4000,
+            });
         }
     };
 
