@@ -84,7 +84,7 @@ const CreateBookModal = () => {
                     </ModalBody>
 
                     <ModalFooter>
-                        <Button colorScheme="blue" mr={3}>
+                        <Button colorScheme="blue" mr={3} type="submit">
                             Add
                         </Button>
                         <Button onClick={onClose}>Cancel</Button>

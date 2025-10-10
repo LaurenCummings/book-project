@@ -3,6 +3,8 @@ import Navbar from "./components/Navbar";
 import BookGrid from "./components/BookGrid";
 import { useState } from "react";
 
+export const BASE_URL = "http://localhost:5000/api";
+
 function App() {
   const [books, setBooks] = useState([]);
 
