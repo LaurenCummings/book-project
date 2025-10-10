@@ -1,5 +1,4 @@
 import { Grid } from "@chakra-ui/react";
-import { BOOKS } from "../dummyData";
 import BookCard from "./BookCard";
 import { useEffect, useState } from "react";
 
@@ -17,10 +16,13 @@ const UserGrid = ({ books, setBooks }) => {
         }
         setBooks(data);
       } catch (error) {
-
+        console.error(error)
+      } finally {
+        setIsLoading(false);
       }
     }
-  },[]);
+    getBooks();
+  },[setBooks]);
 
   return (
     <Grid
@@ -31,7 +33,7 @@ const UserGrid = ({ books, setBooks }) => {
       }}
       gap={4}
     >
-      {BOOKS.map((book) => (
+      {books.map((book) => (
         <BookCard key={book.id} book={book} />
       ))}
     </Grid>
