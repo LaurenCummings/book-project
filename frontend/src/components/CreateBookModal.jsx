@@ -14,6 +14,8 @@ const CreateBookModal = () => {
         imgUrl: "",
     });
 
+    const toast = useToast();
+
     const handleCreateBook = async (e) => {
         e.preventDefault();
         try {
@@ -29,6 +31,16 @@ const CreateBookModal = () => {
             if(!res.ok) {
                 throw new Error(data.error)
             }
+
+            toast({
+                status: "success",
+                title: "Success",
+                description: "Book created successfully",
+                duration: 2000,
+                position: "top-center",
+            });
+            onClose();
+            
         } catch (error) {
 
         }
