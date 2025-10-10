@@ -1,4 +1,4 @@
-import { Grid } from "@chakra-ui/react";
+import { Flex, Grid, Spinner } from "@chakra-ui/react";
 import BookCard from "./BookCard";
 import { useEffect, useState } from "react";
 
@@ -25,18 +25,26 @@ const UserGrid = ({ books, setBooks }) => {
   },[setBooks]);
 
   return (
-    <Grid
-      templateColumns={{
-        base: "1fr",
-        md: "repeat(2, 1fr)",
-        lg: "repeat(3, 1fr)",
-      }}
-      gap={4}
-    >
-      {books.map((book) => (
-        <BookCard key={book.id} book={book} />
-      ))}
-    </Grid>
+    <>
+      <Grid
+        templateColumns={{
+          base: "1fr",
+          md: "repeat(2, 1fr)",
+          lg: "repeat(3, 1fr)",
+        }}
+        gap={4}
+      >
+        {books.map((book) => (
+          <BookCard key={book.id} book={book} />
+        ))}
+      </Grid>    
+
+      {isLoading && (
+        <Flex justifyContent={"center"}>
+          <Spinner size={"xl"} />
+        </Flex>
+      )}
+    </>
   )
 }
 
