@@ -1,6 +1,7 @@
-import { Button, Flex, FormControl, FormLabel, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Select, Textarea, useDisclosure } from "@chakra-ui/react";
+import { Button, Flex, FormControl, FormLabel, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Select, Textarea, useDisclosure, useToast } from "@chakra-ui/react";
 import { BiAddToQueue } from "react-icons/bi";
 import { useState } from "react";
+import { BASE_URL } from "../App";
 
 const CreateBookModal = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
@@ -13,6 +14,26 @@ const CreateBookModal = () => {
         imgUrl: "",
     });
 
+    const handleCreateBook = async (e) => {
+        e.preventDefault();
+        try {
+            const res = await fetch(BASE_URL + "/books", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(inputs),
+            })
+
+            const data = await res.json();
+            if(!res.ok) {
+                throw new Error(data.error)
+            }
+        } catch (error) {
+
+        }
+    };
+
   return (
     <>
         <Button onClick={onOpen}>
@@ -24,7 +45,7 @@ const CreateBookModal = () => {
             onClose={onClose}
         >
             <ModalOverlay />
-            <form onSubmit={() => alert("book created")}>
+            <form onSubmit={handleCreateBook}>
                 <ModalContent>
                     <ModalHeader>Add New Book</ModalHeader>
                     <ModalCloseButton />
