@@ -22,10 +22,17 @@ const BookCard = ({ book }) => {
                 description: "Book deleted successfully",
                 duration: 2000,
                 position: "top-center",
+                isClosable: true,
             })
 
         } catch (error) {
-
+            toast({
+                title: "An error occurred",
+                description: error.message,
+                status: "error",
+                duration: 4000,
+                isClosable: true,
+            })
         }
     }
 
