@@ -15,11 +15,51 @@ import {
     Select,
 	Textarea,
 	useDisclosure,
+	useToast,
 } from "@chakra-ui/react";
+import { useState } from "react";
 import { BiEditAlt } from "react-icons/bi";
+import { BASE_URL } from "../App";
 
 function EditModal({ book, setBooks }) {
+	const toast = useToast();
 	const { isOpen, onOpen, onClose } = useDisclosure();
+	const [isLoading, setIsLoading] = useState(false);
+	const [inputs, setInputs] = useState({
+		title: book.title,
+		author: book.author,
+		plot: book.plot,
+		genre: book.genre,
+		imgUrl: book.imgUrl,
+	})
+
+	const handleEditBook = async (e) => {
+		e.preventDefault();
+		setIsLoading(true);
+		try {
+			const res = await fetch(BASE_URL + "/books/" + book.id, {
+				method: "PATCH",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(inputs)
+			})
+			const data = await res.json();
+			if (!res.ok) {
+				throw new Error(data.error)
+			}
+			setBooks((prevBooks) => prevBooks.map((u) => u.id === book.id ? data : u));
+			toast({
+				status: "success",
+				title: "Success",
+				description: "Book updated successfully",
+				duration: 2000,
+				position: "top-center",
+			});
+		} catch (error) {
+
+		}
+	}
 
 	return (
 		<>
@@ -34,7 +74,7 @@ function EditModal({ book, setBooks }) {
 
 			<Modal isOpen={isOpen} onClose={onClose}>
 				<ModalOverlay />
-				<form onSubmit={handleEditUser}>
+				<form onSubmit={handleEditBook}>
 					<ModalContent>
 						<ModalHeader>Update Book</ModalHeader>
 						<ModalCloseButton />
@@ -73,7 +113,7 @@ function EditModal({ book, setBooks }) {
 						</ModalBody>
 
 						<ModalFooter>
-							<Button colorScheme='blue' mr={3}>
+							<Button colorScheme='blue' mr={3} type="submit" isLoading={isLoading}>
 								Add
 							</Button>
 							<Button onClick={onClose}>Cancel</Button>
