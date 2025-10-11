@@ -1,6 +1,7 @@
 import { Flex, Grid, Spinner, Text } from "@chakra-ui/react";
 import BookCard from "./BookCard";
 import { useEffect, useState } from "react";
+import { BASE_URL } from "../App";
 
 const UserGrid = ({ books, setBooks }) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -8,7 +9,7 @@ const UserGrid = ({ books, setBooks }) => {
   useEffect(() => {
     const getBooks = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/books")
+        const res = await fetch(BASE_URL + "/books")
         const data = await res.json();
 
         if (!res.ok) {
