@@ -1,8 +1,27 @@
-import { Box, Card, CardBody, CardHeader, Flex, Heading, IconButton, Image, Text } from "@chakra-ui/react";
+import { Box, Card, CardBody, CardHeader, Flex, Heading, IconButton, Image, Text, useToast } from "@chakra-ui/react";
 import { BiTrash } from "react-icons/bi";
 import EditModal from "./EditModal";
+import { BASE_URL } from "../App";
 
 const BookCard = ({ book }) => {
+
+    const handleDeleteBook = async ({ books, setBooks }) => {
+        const toast = useToast();
+        try {
+            const res = await fetch(BASE_URL + "/books/" + book.id, {
+                method: "DELETE",
+            })
+            const data = await res.json();
+            if (!res.ok) {
+                throw new Error(data.error)
+            }
+            setBooks((prevBooks) => prevBooks.filter((b) => b.id !== book.id))
+
+        } catch (error) {
+
+        }
+    }
+
   return (
     <Card>
         <CardHeader>
@@ -23,6 +42,7 @@ const BookCard = ({ book }) => {
                         size={"sm"}
                         aria-label="See menu"
                         icon={<BiTrash size={20} />}
+                        onClick={handleDeleteBook}
                     />
                 </Flex>
             </Flex>
