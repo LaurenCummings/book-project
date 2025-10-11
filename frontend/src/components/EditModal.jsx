@@ -66,6 +66,7 @@ function EditModal({ book, setBooks }) {
 			})
 		} finally {
 			setIsLoading(false);
+			onClose();
 		}
 	}
 
