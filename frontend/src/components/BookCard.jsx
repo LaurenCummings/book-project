@@ -16,6 +16,13 @@ const BookCard = ({ book }) => {
                 throw new Error(data.error)
             }
             setBooks((prevBooks) => prevBooks.filter((b) => b.id !== book.id))
+            toast({
+                status: "success",
+                title: "Success",
+                description: "Book deleted successfully",
+                duration: 2000,
+                position: "top-center",
+            })
 
         } catch (error) {
 
