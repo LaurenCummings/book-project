@@ -57,7 +57,15 @@ function EditModal({ book, setBooks }) {
 				position: "top-center",
 			});
 		} catch (error) {
-
+			toast({
+				status: "error",
+				title: "An error occurred",
+				description: error.message,
+				duration: 4000,
+				position: "top-center",
+			})
+		} finally {
+			setIsLoading(false);
 		}
 	}
 
