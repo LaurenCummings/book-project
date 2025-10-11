@@ -32,7 +32,7 @@ def create_book():
 
         db.session.commit()
 
-        return jsonify({"msg": "Book created successfully"}), 201
+        return jsonify(new_book.to_json()), 201
     except Exception as e:
         db.session.rollback()
         return jsonify({"error": str(e)}), 500
