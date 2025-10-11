@@ -36,7 +36,7 @@ const UserGrid = ({ books, setBooks }) => {
         gap={4}
       >
         {books.map((book) => (
-          <BookCard key={book.id} book={book} books={books} setBooks={setBooks} />
+          <BookCard key={book.id} book={book} setBooks={setBooks} />
         ))}
       </Grid>    
 

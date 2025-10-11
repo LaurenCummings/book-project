@@ -3,7 +3,7 @@ import { BiTrash } from "react-icons/bi";
 import EditModal from "./EditModal";
 import { BASE_URL } from "../App";
 
-const BookCard = ({ book, books, setBooks }) => {
+const BookCard = ({ book, setBooks }) => {
     const toast = useToast();
 
     const handleDeleteBook = async () => {
