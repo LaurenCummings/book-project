@@ -3,7 +3,7 @@ import { BiAddToQueue } from "react-icons/bi";
 import { useState } from "react";
 import { BASE_URL } from "../App";
 
-const CreateBookModal = () => {
+const CreateBookModal = ({ setBooks }) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [isLoading, setIsLoading] = useState(false);
     const [inputs, setInputs] = useState({
@@ -41,6 +41,7 @@ const CreateBookModal = () => {
                 position: "top-center",
             });
             onClose();
+            setBooks((prevBooks) => [...prevBooks, data]);
 
         } catch (error) {
             toast({

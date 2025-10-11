@@ -3,7 +3,7 @@ import { IoMoon } from "react-icons/io5"
 import { LuSun } from "react-icons/lu"
 import CreateBookModal from "./CreateBookModal"
 
-const Navbar = () => {
+const Navbar = ({ setBooks }) => {
     const { colorMode, toggleColorMode } = useColorMode()
 
   return (
@@ -18,7 +18,7 @@ const Navbar = () => {
                     <Button onClick={toggleColorMode}>
                         {colorMode === "light" ? <IoMoon /> : <LuSun size={20} />}
                     </Button>
-                    <CreateBookModal />
+                    <CreateBookModal setBooks={setBooks} />
                 </Flex>
             </Flex>
         </Box>
