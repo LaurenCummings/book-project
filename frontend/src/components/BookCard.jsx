@@ -15,7 +15,7 @@ const BookCard = ({ book, setBooks }) => {
             if (!res.ok) {
                 throw new Error(data.error)
             }
-            setBooks((prevBooks) => prevBooks.filter((b) => b.id !== book.id))
+            setBooks((prevBooks) => prevBooks.filter((u) => u.id !== book.id))
             toast({
                 status: "success",
                 title: "Success",
