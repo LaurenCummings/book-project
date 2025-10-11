@@ -6,7 +6,7 @@ import { BASE_URL } from "../App";
 const BookCard = ({ book, books, setBooks }) => {
     const toast = useToast();
 
-    const handleDeleteBook = async ({ books, setBooks }) => {
+    const handleDeleteBook = async () => {
         try {
             const res = await fetch(BASE_URL + "/books/" + book.id, {
                 method: "DELETE",
@@ -31,6 +31,7 @@ const BookCard = ({ book, books, setBooks }) => {
                 description: error.message,
                 status: "error",
                 duration: 4000,
+                position: "top-center",
                 isClosable: true,
             })
         }
@@ -56,7 +57,7 @@ const BookCard = ({ book, books, setBooks }) => {
                         size={"sm"}
                         aria-label="See menu"
                         icon={<BiTrash size={20} />}
-                        onClick={() => handleDeleteBook(book.id)}
+                        onClick={handleDeleteBook}
                     />
                 </Flex>
             </Flex>
