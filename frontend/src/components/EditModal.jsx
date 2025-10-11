@@ -142,7 +142,7 @@ function EditModal({ book, setBooks }) {
 
 						<ModalFooter>
 							<Button colorScheme='blue' mr={3} type="submit" isLoading={isLoading}>
-								Add
+								Update
 							</Button>
 							<Button onClick={onClose}>Cancel</Button>
 						</ModalFooter>
