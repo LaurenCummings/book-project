@@ -49,7 +49,7 @@ const BookCard = ({ book }) => {
                         size={"sm"}
                         aria-label="See menu"
                         icon={<BiTrash size={20} />}
-                        onClick={handleDeleteBook}
+                        onClick={() => handleDeleteBook(book.id)}
                     />
                 </Flex>
             </Flex>
