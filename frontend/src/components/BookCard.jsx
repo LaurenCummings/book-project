@@ -3,10 +3,10 @@ import { BiTrash } from "react-icons/bi";
 import EditModal from "./EditModal";
 import { BASE_URL } from "../App";
 
-const BookCard = ({ book }) => {
+const BookCard = ({ book, books, setBooks }) => {
+    const toast = useToast();
 
     const handleDeleteBook = async ({ books, setBooks }) => {
-        const toast = useToast();
         try {
             const res = await fetch(BASE_URL + "/books/" + book.id, {
                 method: "DELETE",
