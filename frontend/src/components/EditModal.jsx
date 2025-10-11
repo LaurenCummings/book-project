@@ -34,50 +34,53 @@ function EditModal({ book, setBooks }) {
 
 			<Modal isOpen={isOpen} onClose={onClose}>
 				<ModalOverlay />
-				<ModalContent>
-					<ModalHeader>Update Book</ModalHeader>
-					<ModalCloseButton />
-					<ModalBody pb={6}>
-						<Flex alignItems={"center"} gap={4}>
-                        <FormControl isRequired>
-                            <FormLabel>Title</FormLabel>
-                            <Input placeholder="Type title here" />
-                        </FormControl>
-                        <FormControl isRequired>
-                            <FormLabel>Author</FormLabel>
-                            <Input placeholder="Type author here" />
-                        </FormControl>
-                    </Flex>
-                    <FormControl mt={4} isRequired>
-                        <FormLabel>Plot</FormLabel>
-                        <Textarea placeholder="Type plot here" />
-                    </FormControl>
-                    <FormControl mt={4} isRequired>
-                        <FormLabel>Genre</FormLabel>
-                        <Select placeholder="Select genre">
-                            <option value="mystery">Mystery</option>
-                            <option value="nonFiction">Non-Fiction</option>
-                            <option value="historicalFiction">Historical Fiction</option>
-                            <option value="fantasy">Fantasy</option>
-                            <option value="biography">Biography</option>
-                            <option value="yaFiction">YA Fiction</option>
-                            <option value="thriller">Thriller</option>
-                            <option value="dystopian">Dystopian</option>
-                        </Select>
-                    </FormControl>
-                    <FormControl mt={4}>
-                        <FormLabel>Image URL</FormLabel>
-                        <Input placeholder="Type image URL here" />
-                    </FormControl>
-					</ModalBody>
+				<form onSubmit={handleEditUser}>
+					<ModalContent>
+						<ModalHeader>Update Book</ModalHeader>
+						<ModalCloseButton />
+						<ModalBody pb={6}>
+							<Flex alignItems={"center"} gap={4}>
+							<FormControl isRequired>
+								<FormLabel>Title</FormLabel>
+								<Input placeholder="Type title here" />
+							</FormControl>
+							<FormControl isRequired>
+								<FormLabel>Author</FormLabel>
+								<Input placeholder="Type author here" />
+							</FormControl>
+						</Flex>
+						<FormControl mt={4} isRequired>
+							<FormLabel>Plot</FormLabel>
+							<Textarea placeholder="Type plot here" />
+						</FormControl>
+						<FormControl mt={4} isRequired>
+							<FormLabel>Genre</FormLabel>
+							<Select placeholder="Select genre">
+								<option value="mystery">Mystery</option>
+								<option value="nonFiction">Non-Fiction</option>
+								<option value="historicalFiction">Historical Fiction</option>
+								<option value="fantasy">Fantasy</option>
+								<option value="biography">Biography</option>
+								<option value="yaFiction">YA Fiction</option>
+								<option value="thriller">Thriller</option>
+								<option value="dystopian">Dystopian</option>
+							</Select>
+						</FormControl>
+						<FormControl mt={4}>
+							<FormLabel>Image URL</FormLabel>
+							<Input placeholder="Type image URL here" />
+						</FormControl>
+						</ModalBody>
 
-					<ModalFooter>
-						<Button colorScheme='blue' mr={3}>
-							Add
-						</Button>
-						<Button onClick={onClose}>Cancel</Button>
-					</ModalFooter>
-				</ModalContent>
+						<ModalFooter>
+							<Button colorScheme='blue' mr={3}>
+								Add
+							</Button>
+							<Button onClick={onClose}>Cancel</Button>
+						</ModalFooter>
+					</ModalContent>					
+				</form>
+
 			</Modal>
 		</>
 	);
