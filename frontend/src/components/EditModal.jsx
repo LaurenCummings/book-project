@@ -18,7 +18,7 @@ import {
 } from "@chakra-ui/react";
 import { BiEditAlt } from "react-icons/bi";
 
-function EditModal({ book }) {
+function EditModal({ book, setBooks }) {
 	const { isOpen, onOpen, onClose } = useDisclosure();
 
 	return (

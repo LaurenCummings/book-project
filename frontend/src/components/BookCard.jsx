@@ -50,7 +50,7 @@ const BookCard = ({ book, setBooks }) => {
                     </Box>
                 </Flex>
                 <Flex>
-                    <EditModal book={book} />
+                    <EditModal book={book} setBooks={setBooks} />
                     <IconButton 
                         variant="ghost"
                         colorScheme="red"
